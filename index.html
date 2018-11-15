@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Ruler</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div id="calc">
+                    <div class="col s12 m6">
+                        <div class="card-panel blue darken-1">
+                            <span class="white-text">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="input-field inline">
+                                            <input class="white-text" v-model="usrInput" v-on:keypress="isNumber(event)">
+                                        </div>
+                                        {{deviceName}}
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+
+                        <center>
+                            <a class='dropdown-trigger btn blue darken-3' href='#' data-target='deviceDropdown'>Change
+                                Device</a>
+                        </center>
+
+                        <ul id='deviceDropdown' class='dropdown-content'>
+                            <li><a href="#!" v-on:click="deviceModifier = 158, deviceName = 'Pixel 3XL'">Pixel 3XL</a></li>
+                            <li><a href="#!" v-on:click="deviceModifier = 145.6, deviceName = 'Pixel 3'">Pixel 3</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="col s12 m6">
+
+
+                        <div class="card-panel blue darken-1">
+                            <span class="white-text">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <h3>{{Math.round(usrInput * deviceModifier * unitModifer * 100) / 100 }}
+                                            {{unit}}</h3>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+
+                        <center>
+                            <a class='dropdown-trigger btn blue darken-3' href='#' data-target='unitsDropdown'>Change
+                                Unit</a>
+                        </center>
+                        <ul id='unitsDropdown' class='dropdown-content'>
+                            <li><a href="#!" v-on:click="unitModifer = 1, unit = 'mm'">mm</a></li>
+                            <li><a href="#!" v-on:click="unitModifer = 0.0393701, unit = 'inch'">inch</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+    </main>
+
+
+
+    </div>
+
+    <footer class="page-footer blue darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <div id="appTitle">
+                        <h5 class="white-text">{{title}}</h5>
+                    </div>
+                    <p class="grey-text text-lighten-4">Ever needed to measure something, but didn't have a ruler
+                        handy?</p>
+                    <p>Measure the object using your phone's height and then use the app to find it's actually size.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <a class="grey-text text-lighten-4" href="https://github.com/ArKits/">An ArKits Production</a>
+                <a class="grey-text text-lighten-4 right" href="https://github.com/ArKits/">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
