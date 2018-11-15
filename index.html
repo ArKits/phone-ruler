@@ -36,8 +36,11 @@
                         </center>
 
                         <ul id='deviceDropdown' class='dropdown-content'>
+                             <!-- Add device height in mm -->
                             <li><a href="#!" v-on:click="deviceModifier = 158, deviceName = 'Pixel 3XL'">Pixel 3XL</a></li>
                             <li><a href="#!" v-on:click="deviceModifier = 145.6, deviceName = 'Pixel 3'">Pixel 3</a></li>
+                            <li><a href="#!" v-on:click="deviceModifier = 143.6, deviceName = 'iPhone XS'">iPhone XS</a></li>
+                            <li><a href="#!" v-on:click="deviceModifier = 157.5, deviceName = 'iPhone XS Max'">iPhone XS Max</a></li>
                         </ul>
 
                     </div>
@@ -60,17 +63,17 @@
                                 Unit</a>
                         </center>
                         <ul id='unitsDropdown' class='dropdown-content'>
+                            <!-- Add unit's equivalent in mm here -->
                             <li><a href="#!" v-on:click="unitModifer = 1, unit = 'mm'">mm</a></li>
+                            <li><a href="#!" v-on:click="unitModifer = 0.1, unit = 'cm'">cm</a></li>
                             <li><a href="#!" v-on:click="unitModifer = 0.0393701, unit = 'inch'">inch</a></li>
+                            <li><a href="#!" v-on:click="unitModifer = 0.00328084, unit = 'ft'">ft</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-
     </main>
-
-
 
     </div>
 
