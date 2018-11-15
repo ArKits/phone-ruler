@@ -17,23 +17,24 @@
             <div class="row">
                 <div id="calc">
                     <div class="col s12 m6">
-                        <div class="card-panel blue darken-1">
-                            <span class="white-text">
-                                <div class="row">
-                                    <div class="col s12">
-                                        <div class="input-field inline">
-                                            <input type="number" class="white-text" v-model="usrInput" v-on:keypress="isNumber(event)">
-                                        </div>
-                                        {{deviceName}}
-                                    </div>
-                                </div>
-                            </span>
-                        </div>
 
-                        <center>
-                            <a class='dropdown-trigger btn blue darken-3' href='#' data-target='deviceDropdown'>Change
-                                Device</a>
-                        </center>
+                                  <div class="card blue darken-3">
+                                    <div class="card-content white-text">
+                                     
+                                      <div class="row">
+                                            <div class="col s12">
+                                                <div class="input-field inline">
+                                                    <input type="number" class="white-text" v-model="usrInput" v-on:keypress="isNumber(event)">
+                                                </div>
+                                                × {{deviceName}}
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-action">
+                                      <a class='dropdown-trigger' href='#' data-target='deviceDropdown'>Change Device</a>
+                                    </div>
+                                  </div>
 
                         <ul id='deviceDropdown' class='dropdown-content'>
                              <!-- Add device height in mm -->
@@ -47,21 +48,22 @@
                     <div class="col s12 m6">
 
 
-                        <div class="card-panel blue darken-1">
-                            <span class="white-text">
-                                <div class="row">
-                                    <div class="col s12">
-                                        <h3>{{Math.round(usrInput * deviceModifier * unitModifer * 100) / 100 }}
-                                            {{unit}}</h3>
+                            <div class="card blue darken-3">
+                                    <div class="card-content white-text">
+                                     
+                                      <div class="row">
+                                            <div class="col s12">
+                                                    <h3>{{Math.round(usrInput * deviceModifier * unitModifer * 100) / 100 }}
+                                                            {{unit}}</h3>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
-                                </div>
-                            </span>
-                        </div>
+                                    <div class="card-action">
+                                      <a class='dropdown-trigger' href='#' data-target='unitsDropdown'>Change Unit</a>
+                                    </div>
+                                  </div>
 
-                        <center>
-                            <a class='dropdown-trigger btn blue darken-3' href='#' data-target='unitsDropdown'>Change
-                                Unit</a>
-                        </center>
                         <ul id='unitsDropdown' class='dropdown-content'>
                             <!-- Add unit's equivalent in mm here -->
                             <li><a href="#!" v-on:click="unitModifer = 1, unit = 'mm'">mm</a></li>
